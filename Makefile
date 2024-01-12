@@ -2,8 +2,8 @@
 # https://ie.u-ryukyu.ac.jp/~e085739/c.makefile.tuts.html
 
 # プログラム名とオブジェクトファイル名
-PROGRAM = a
-OBJS = main.o color.o
+PROGRAM = a.out
+OBJS = main.o color.o image.o
 
 # 定義済みマクロの再定義
 CC = gcc

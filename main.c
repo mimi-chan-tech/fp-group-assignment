@@ -1,13 +1,12 @@
-#include <stdio.h>
-
 #include "color.h"
+#include "image.h"
 
 int main(void) {
-    color c;
-    init_color(&c);
-    set_color(&c, get_color(0, 0, 0));
+    image image;
 
-    printf("%d, %d, %d\n", c.r, c.g, c.b);
+    image_init(&image, 512, 256, color_rgb(255, 255, 255));
+    image_set_pixel(&image, 300, 50, color_rgb(255, 0, 0));
+    image_export(&image);
 
     return 0;
 }
