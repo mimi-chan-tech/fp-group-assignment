@@ -6,10 +6,11 @@ FP#15 group assignment project.
 
 ### VS Code
 
-C/C++ Extensions
+#### C/C++ Extensions
+
 https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 
-Config
+#### Config
 
 ```
 {

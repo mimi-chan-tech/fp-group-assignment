@@ -1,5 +1,4 @@
-#include "color.h"
-#include "image.h"
+#include "header.h"
 
 int main(void) {
     image image;
