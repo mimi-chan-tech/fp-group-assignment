@@ -19,3 +19,23 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 4}"
 }
 ```
+
+## Build
+
+```
+$ make
+```
+
+to build.
+
+```
+$ make clean
+```
+
+to delete object and depend files.
+
+```
+$ ./a.out
+```
+
+to run app.
