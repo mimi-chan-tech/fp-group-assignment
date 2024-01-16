@@ -12,7 +12,7 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 
 #### Config
 
-```
+```JSON
 {
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
@@ -22,19 +22,19 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 
 ## Build
 
-```
+```Bash
 $ make
 ```
 
 to build.
 
-```
+```Bash
 $ make clean
 ```
 
 to delete object and depend files.
 
-```
+```Bash
 $ ./a.out
 ```
 
@@ -44,7 +44,7 @@ to run app.
 
 Sample Code
 
-```
+```C
 #include "fp15_all.h"
 
 int main(void) {
@@ -65,7 +65,7 @@ int main(void) {
 
 ## Drawing Object Function
 
-```
+```C
 void draw_point(Frame* frame, double x, double y, Color color);
 
 void draw_background(Frame* frame, Color color);
