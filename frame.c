@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 
-void frame_init(frame* frame, int width, int height, color color) {
+void frame_init(Frame* frame, int width, int height, Color color) {
     frame->width = width;
     frame->height = height;
 
@@ -17,7 +17,7 @@ void frame_init(frame* frame, int width, int height, color color) {
     return;
 }
 
-void frame_export(frame* frame) {
+void frame_export(Frame* frame) {
     char file_name[256];
 
     mkdir("./out", 0777);
@@ -48,7 +48,7 @@ void frame_export(frame* frame) {
     return;
 }
 
-void frame_set_pixel(frame* frame, int x, int y, color color) {
+void frame_set_pixel(Frame* frame, int x, int y, Color color) {
     if (x <= 0 || frame->width < x || y <= 0 || frame->height < y) {
         return;
     }

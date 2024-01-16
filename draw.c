@@ -4,11 +4,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void draw_point(frame* frame, double x, double y, color color) {
+// return max record of coordination list
+static double max_coord(double array[]) {
+    double max;
+    for (max = *array; *array; array++) {
+        if (*array > max) {
+            max = *array;
+        }
+    }
+    return max;
+}
+
+// return min record of coordination list
+static double min_coord(double array[]) {
+    double min;
+    for (min = *array; *array; array++) {
+        if (*array < min) {
+            min = *array;
+        }
+    }
+    return min;
+}
+
+// return sign of 3 coordination
+static double sign(double x_0, double y_0, double x_1, double y_1, double x_2,
+                   double y_2) {
+    return (x_0 - x_2) * (y_1 - y_2) - (x_1 - x_2) * (y_0 - y_2);
+}
+
+void draw_point(Frame* frame, double x, double y, Color color) {
     frame_set_pixel(frame, x, y, color);
 }
 
-void draw_background(frame* frame, color color) {
+void draw_background(Frame* frame, Color color) {
     for (int x = 1; x <= (*frame).width; x++) {
         for (int y = 1; y <= (*frame).height; y++) {
             frame_set_pixel(frame, x, y, color);
@@ -16,8 +44,8 @@ void draw_background(frame* frame, color color) {
     }
 }
 
-void draw_line(frame* frame, double start_x, double start_y, double end_x,
-               double end_y, double width, color color) {
+void draw_line(Frame* frame, double start_x, double start_y, double end_x,
+               double end_y, double width, Color color) {
     double min_x, max_x, min_y, max_y;
 
     if (start_x > end_x) {
@@ -57,8 +85,8 @@ void draw_line(frame* frame, double start_x, double start_y, double end_x,
     }
 }
 
-void draw_rect(frame* frame, double start_x, double start_y, double end_x,
-               double end_y, color color) {
+void draw_rect(Frame* frame, double start_x, double start_y, double end_x,
+               double end_y, Color color) {
     for (int x = start_x; x <= end_x; x++) {
         for (int y = start_y; y <= end_y; y++) {
             frame_set_pixel(frame, x, y, color);
@@ -66,8 +94,8 @@ void draw_rect(frame* frame, double start_x, double start_y, double end_x,
     }
 }
 
-void draw_fillcircle(frame* frame, double center_x, double center_y,
-                     double radius, color color) {
+void draw_fillcircle(Frame* frame, double center_x, double center_y,
+                     double radius, Color color) {
     int x_min = (int)(center_x - radius);
     int x_max = (int)(center_x + radius);
 
@@ -85,8 +113,8 @@ void draw_fillcircle(frame* frame, double center_x, double center_y,
     }
 }
 
-void draw_triangle(frame* frame, double x_1, double y_1, double x_2, double y_2,
-                   double x_3, double y_3, color color) {
+void draw_triangle(Frame* frame, double x_1, double y_1, double x_2, double y_2,
+                   double x_3, double y_3, Color color) {
     double x_args[] = {x_1, x_2, x_3};
     double y_args[] = {y_1, y_2, y_3};
 
@@ -107,32 +135,4 @@ void draw_triangle(frame* frame, double x_1, double y_1, double x_2, double y_2,
             }
         }
     }
-}
-
-// return max record of coordination list
-double max_coord(double array[]) {
-    double max;
-    for (max = *array; *array; array++) {
-        if (*array > max) {
-            max = *array;
-        }
-    }
-    return max;
-}
-
-// return min record of coordination list
-double min_coord(double array[]) {
-    double min;
-    for (min = *array; *array; array++) {
-        if (*array < min) {
-            min = *array;
-        }
-    }
-    return min;
-}
-
-// return sign of 3 coordination
-double sign(double x_0, double y_0, double x_1, double y_1, double x_2,
-            double y_2) {
-    return (x_0 - x_2) * (y_1 - y_2) - (x_1 - x_2) * (y_0 - y_2);
 }
