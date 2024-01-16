@@ -5,7 +5,7 @@ int main(void) {
 
     frame_init(&fr, 512, 256, color_rgb(255, 255, 255));
 
-    draw_background(&fr, color_hex("#f00"));
+    draw_background(&fr, color_hex("#fff"));
 
     frame_export(&fr);
 

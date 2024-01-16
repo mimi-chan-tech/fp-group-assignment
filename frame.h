@@ -13,10 +13,10 @@ typedef struct {
     Color frame[FRAME_MAX_HEIGHT][FRAME_MAX_WIDTH];
 } Frame;
 
-void frame_init(Frame*, int, int, Color);
+void frame_init(Frame* frame, int width, int height, Color color);
 
-void frame_export(Frame*);
+void frame_export(Frame* frame);
 
-void frame_set_pixel(Frame*, int, int, Color);
+void frame_set_pixel(Frame* frame, int x, int y, Color color);
 
 #endif  // _frame_H_

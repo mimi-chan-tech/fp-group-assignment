@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
 void frame_init(Frame* frame, int width, int height, Color color) {
     frame->width = width;
@@ -20,7 +21,14 @@ void frame_init(Frame* frame, int width, int height, Color color) {
 void frame_export(Frame* frame) {
     char file_name[256];
 
-    mkdir("./out", 0777);
+    struct stat st;
+    char* path = "./out";
+    if (stat(path, &st) == 0 && S_ISDIR(st.st_mode)) {
+        system("rm ./out/*");
+    } else {
+        mkdir("./out", 0777);
+    }
+
     sprintf(file_name, "./out/frame%d.ppm", ++(*frame).frame_count);
 
     FILE* f = fopen(file_name, "wb");
