@@ -3,7 +3,7 @@
 
 # プログラム名とオブジェクトファイル名
 PROGRAM = a.out
-OBJS = main.o color.o image.o
+OBJS = main.o color.o frame.o draw.o
 
 # 定義済みマクロの再定義
 CC = gcc

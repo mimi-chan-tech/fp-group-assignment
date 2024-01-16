@@ -1,11 +1,11 @@
 #include "header.h"
 
 int main(void) {
-    image filed;
+    frame fr;
 
-    image_init(&filed, 512, 256, color_rgb(255, 255, 255));
-    image_set_pixel(&filed, 300, 50, color_rgb(255, 0, 0));
-    image_export(&filed);
+    frame_init(&fr, 512, 256, color_rgb(255, 255, 255));
+
+    frame_export(&fr);
 
     return 0;
 }

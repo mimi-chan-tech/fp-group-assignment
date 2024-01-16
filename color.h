@@ -9,4 +9,6 @@ typedef struct {
 
 color color_rgb(unsigned char, unsigned char, unsigned char);
 
+color color_mix(color color_1, color color_2);
+
 #endif  // _COLOR_H_
