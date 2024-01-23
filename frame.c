@@ -31,7 +31,7 @@ void frame_export(Frame* frame) {
         }
     }
 
-    sprintf(file_name, "./out/frame%d.ppm", ++(*frame).frame_count);
+    sprintf(file_name, "./out/frame%03d.ppm", ++(*frame).frame_count);
 
     FILE* f = fopen(file_name, "wb");
 
